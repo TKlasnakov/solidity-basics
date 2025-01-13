@@ -12,10 +12,14 @@ pragma solidity ^0.8.18;
 
     Person[] public listOfPeople;
 
+    mapping(string => uint256) public nameToFavoriteNumber;
+
     function addPerson(string memory _name, uint256 _favoriteNumber) public {
         listOfPeople.push(
             Person({name: _name, favoriteNumber: _favoriteNumber})
             );
+        
+        nameToFavoriteNumber[_name] = _favoriteNumber;
     }
 
     function store(uint256 _favoriteNumber) public {

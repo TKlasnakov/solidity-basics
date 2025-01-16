@@ -17,5 +17,10 @@ SimpleStorage[] public listOfSimpleStorageContracts;
 
     function sfGet(uint256 _contractIndex) public view returns (uint256 ){
         return listOfSimpleStorageContracts[_contractIndex].retrieve();
-    } 
+    }
+
+		function getNumberOfSimpleStorageContracts() public view returns (uint256) {
+				return listOfSimpleStorageContracts.length;
+		}
 }
+
